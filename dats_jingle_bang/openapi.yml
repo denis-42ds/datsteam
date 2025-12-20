@@ -1,0 +1,1024 @@
+openapi: 3.0.1
+info:
+  title: Game API
+  description: Game API
+  contact: {}
+  version: "1.0"
+servers:
+  - url: https://games-test.datsteam.dev
+    description: Test server
+  - url: https://games.datsteam.dev
+    description: Production server
+paths:
+  /api/arena:
+    get:
+      tags:
+      - player
+      summary: "Game arena, viewed by player"
+      responses:
+        "200":
+          description: player state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/view.PlayerResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+      security:
+      - ApiKeyAuth: []
+  /api/booster:
+    get:
+      tags:
+      - player
+      summary: Get available boosters
+      responses:
+        "200":
+          description: list of available boosters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/view.AvailableBoosterResponse'
+        "403":
+          description: you are not registered in the game
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+      security:
+      - ApiKeyAuth: []
+    post:
+      tags:
+      - player
+      summary: Activate booster
+      requestBody:
+        description: Booster choice
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/command.Booster'
+        required: true
+      responses:
+        "200":
+          description: booster applied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+        "400":
+          description: invalid power-up selection
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+      security:
+      - ApiKeyAuth: []
+      x-codegen-request-body-name: request
+  /api/cheatcode:
+    post:
+      tags:
+      - player
+      summary: '?'
+      requestBody:
+        description: Code
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/command.CheatCode'
+        required: true
+      responses:
+        "200":
+          description: cheat code applied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/view.CheatCodeResponse'
+        "400":
+          description: missing code parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+      security:
+      - ApiKeyAuth: []
+      x-codegen-request-body-name: request
+  /api/logs:
+    get:
+      tags:
+      - player
+      summary: Player logs
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/player.LogMessage'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+      security:
+      - ApiKeyAuth: []
+  /api/move:
+    post:
+      tags:
+      - player
+      summary: Move bomberman
+      description: Commands for player's bombermans
+      requestBody:
+        description: Move command
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/command.Player'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+      security:
+      - ApiKeyAuth: []
+      x-codegen-request-body-name: request
+  /api/rounds:
+    get:
+      tags:
+      - rounds
+      summary: game rounds
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/swagger.RoundListResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gamesdk.PublicError'
+      security:
+      - ApiKeyAuth: []
+components:
+  schemas:
+    command.Bomber:
+      type: object
+      properties:
+        bombs:
+          type: array
+          description: path coordinates
+          items:
+            type: array
+            items:
+              type: integer
+        id:
+          type: string
+          description: unique identifier of the bomber
+        path:
+          type: array
+          description: "planned movement path, max 30 steps"
+          items:
+            type: array
+            items:
+              type: integer
+    command.Booster:
+      type: object
+      properties:
+        booster:
+          type: integer
+    command.CheatCode:
+      type: object
+      properties:
+        code:
+          type: string
+    command.Player:
+      type: object
+      properties:
+        bombers:
+          type: array
+          description: list of bombers controlled by the player
+          items:
+            $ref: '#/components/schemas/command.Bomber'
+    config.BoosterConfig:
+      type: object
+      properties:
+        limit:
+          type: integer
+          description: запрещать покупку если layer.Boosters больше
+        prices:
+          type: array
+          description: Type    enum.BoosterType `json:"type"`
+          items:
+            type: integer
+        quality:
+          type: integer
+          description: если 1 и скорость то при покупке добавляется 1 к скорости в
+            Player.Config
+    config.CheatConfig:
+      type: object
+      properties:
+        bombersPenalty:
+          type: integer
+        cheatCodes:
+          type: array
+          items:
+            type: string
+        cheatCodesEnable:
+          type: boolean
+        pointBonus:
+          type: integer
+    config.Config:
+      type: object
+      properties:
+        achievements:
+          type: array
+          description: "Achievements for players, optional"
+          items:
+            type: string
+        chainReactionBombCounts:
+          type: integer
+        cheats:
+          $ref: '#/components/schemas/config.CheatConfig'
+        map:
+          type: object
+          description: Map configuration
+          allOf:
+          - $ref: '#/components/schemas/config.MapConfig'
+        mob:
+          type: object
+          description: Mob configuration
+          allOf:
+          - $ref: '#/components/schemas/config.MobConfig'
+        player:
+          type: object
+          description: Player configuration
+          allOf:
+          - $ref: '#/components/schemas/config.PlayerConfig'
+        printMap:
+          type: boolean
+          description: PrintMap print the generated map to the console
+        respawnDelay:
+          type: integer
+        scores:
+          type: array
+          description: Scores for places
+          items:
+            type: integer
+        seed:
+          type: integer
+          description: Seed for the random number generator
+        skill:
+          type: object
+          description: SkillConfig configuration
+          allOf:
+          - $ref: '#/components/schemas/config.SkillConfig'
+        spawnAttempts:
+          type: integer
+          description: SpawnAttempts attempts to spawn in an empty spot
+        stats:
+          $ref: '#/components/schemas/config.StatsConfig'
+        topPlayersGroupSize:
+          type: integer
+          description: TopPlayersGroupSize number of players in a group for top players
+            listing
+    config.MapConfig:
+      type: object
+      properties:
+        blocksPerPlayer:
+          type: integer
+          description: BlocksPerPlayer set the required number of blocks per player.
+        crossGap:
+          type: integer
+          description: CrossGap distance between crosses
+        crossSize:
+          type: integer
+          description: only for V2 generator
+        densityFactor:
+          type: number
+          description: DensityFactor map density coefficient.
+        minSize:
+          type: integer
+          description: MinSize minimum map size.
+        mobDistribution:
+          type: object
+          additionalProperties:
+            type: integer
+        mobPercentage:
+          type: integer
+          description: MobPercentage percentage of mobs on the map
+        padding:
+          type: integer
+          description: Padding number of cells to clear around the player.
+        version:
+          type: integer
+          description: Version of the map generator.
+    config.MobConfig:
+      type: object
+      properties:
+        hysteresis:
+          type: integer
+        invulnerableDuration:
+          type: integer
+        maxWanderSteps:
+          type: integer
+        minWanderSteps:
+          type: integer
+        respawn:
+          type: boolean
+        speed:
+          type: integer
+        vision:
+          type: integer
+    config.PlayerConfig:
+      type: object
+      properties:
+        armor:
+          type: integer
+        bombDelay:
+          type: integer
+        bombers:
+          type: integer
+        bombs:
+          type: integer
+        canPassBombs:
+          type: boolean
+        canPassObstacles:
+          type: boolean
+        canPassWalls:
+          type: boolean
+        expectedCount:
+          type: integer
+        invulnerableDuration:
+          type: integer
+        logLimit:
+          type: integer
+          description: LogLimit Max number of logs per player
+        maxPath:
+          type: integer
+        maxSkillPoints:
+          type: integer
+        range:
+          type: integer
+        speed:
+          type: integer
+        view:
+          type: integer
+    config.SkillConfig:
+      type: object
+      properties:
+        boosters:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/config.BoosterConfig'
+        deathPenaltyPointsPercentage:
+          type: integer
+        period:
+          type: integer
+          description: времы мс через которое будут выдаваться поинты (Period * time.Millisecond
+            )
+        points:
+          type: integer
+    config.StatsConfig:
+      type: object
+      properties:
+        kill_points:
+          type: integer
+        mob_kill_points:
+          type: integer
+        obstacle_points:
+          type: array
+          items:
+            type: integer
+    gamesdk.PublicError:
+      type: object
+      properties:
+        code:
+          type: integer
+        errors:
+          type: array
+          items:
+            type: string
+    player.LogMessage:
+      type: object
+      properties:
+        message:
+          type: string
+        time:
+          type: string
+    swagger.Achieve:
+      type: object
+      properties:
+        counters:
+          type: object
+          additionalProperties:
+            type: number
+        createdAt:
+          type: string
+        name:
+          type: string
+        player:
+          type: string
+        realm:
+          type: string
+    swagger.PlayerStats:
+      type: object
+      properties:
+        attempt:
+          type: integer
+        counters:
+          type: object
+          additionalProperties:
+            type: number
+        endedAt:
+          type: string
+        player:
+          type: string
+        score:
+          type: number
+    swagger.RealmStats:
+      type: object
+      properties:
+        game:
+          type: string
+        players:
+          type: array
+          items:
+            $ref: '#/components/schemas/swagger.PlayerStats'
+        realm:
+          type: string
+        startedAt:
+          type: string
+    swagger.RealmStatsResponse:
+      type: object
+      properties:
+        achieves:
+          type: array
+          items:
+            $ref: '#/components/schemas/swagger.Achieve'
+        realms:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/swagger.RealmStats'
+        total:
+          $ref: '#/components/schemas/swagger.TotalStats'
+    swagger.RoundListResponse:
+      type: object
+      properties:
+        eventId:
+          type: string
+          example: "1"
+        now:
+          type: string
+          example: 2021-01-01T00:00:00Z
+        rounds:
+          type: array
+          items:
+            $ref: '#/components/schemas/swagger.RoundResponse'
+    swagger.RoundResponse:
+      type: object
+      properties:
+        duration:
+          type: integer
+          example: 60
+        endAt:
+          type: string
+          example: 2021-01-01T00:00:00Z
+        name:
+          type: string
+          example: Round 1
+        repeat:
+          type: integer
+          example: 1
+        startAt:
+          type: string
+          example: 2021-01-01T00:00:00Z
+        status:
+          type: string
+          example: active
+    swagger.TotalStats:
+      type: object
+      properties:
+        players:
+          type: array
+          items:
+            $ref: '#/components/schemas/swagger.PlayerStats'
+    view.Arena:
+      type: object
+      properties:
+        bombs:
+          type: array
+          description: List of active bombs on the arena
+          items:
+            $ref: '#/components/schemas/view.Bomb'
+        obstacles:
+          type: array
+          description: List of destructible obstacle coordinates
+          items:
+            type: array
+            items:
+              type: integer
+        walls:
+          type: array
+          description: List of indestructible wall coordinates
+          items:
+            type: array
+            items:
+              type: integer
+    view.AvailableBooster:
+      type: object
+      properties:
+        cost:
+          type: integer
+          description: Cost in skill points
+          example: 50
+        type:
+          type: string
+          description: Booster type name
+          example: speed
+    view.AvailableBoosterResponse:
+      type: object
+      properties:
+        available:
+          type: array
+          description: List of boosters available for purchase
+          items:
+            $ref: '#/components/schemas/view.AvailableBooster'
+        state:
+          type: object
+          description: Current player booster state
+          allOf:
+          - $ref: '#/components/schemas/view.BoosterState'
+    view.Bomb:
+      type: object
+      properties:
+        pos:
+          type: array
+          description: Position of the bomb
+          example:
+          - 10
+          - 15
+          items:
+            type: integer
+        range:
+          type: integer
+          description: Explosion radius in tiles
+          example: 3
+        timer:
+          type: number
+          description: Seconds until explosion
+          example: 2.5
+    view.Bomber:
+      type: object
+      properties:
+        alive:
+          type: boolean
+          description: Whether the bomber is alive
+          example: true
+        armor:
+          type: integer
+          description: Current armor points (hits before death)
+          example: 3
+        bombs_available:
+          type: integer
+          description: Number of bombs the bomber can place
+          example: 2
+        can_move:
+          type: boolean
+          description: Moving bomber cannot accept new move commands
+          example: false
+        id:
+          type: string
+          description: Unique bomber ID
+          example: bomber-1234
+        pos:
+          type: array
+          description: Current position on the map
+          example:
+          - 10
+          - 15
+          items:
+            type: integer
+        safe_time:
+          type: integer
+          description: Remaining invulnerability time for the bomber in milliseconds
+          example: 0
+        tier:
+          type: string
+          description: Tier of the bomber
+          example: top_20
+    view.Booster:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the booster
+          example: Speed
+        time:
+          type: string
+          example: 2025-12-07T12:00:00Z
+    view.BoosterState:
+      type: object
+      properties:
+        armor:
+          type: integer
+          description: Base armor for new bombers
+          example: 2
+        bomb_delay:
+          type: integer
+          description: Time in milliseconds before bomb explodes
+          example: 3000
+        bomb_range:
+          type: integer
+          description: Explosion radius of bombs in tiles
+          example: 3
+        bombers:
+          type: integer
+          description: Maximum number of bombers player can have
+          example: 3
+        bombs:
+          type: integer
+          description: Maximum number of simultaneous bombs per bomber
+          example: 2
+        can_pass_bombs:
+          type: boolean
+          description: Whether bombers can walk through bombs
+          example: false
+        can_pass_obstacles:
+          type: boolean
+          description: Whether bombers can walk through obstacles
+          example: false
+        can_pass_walls:
+          type: boolean
+          description: Whether bombers can walk through walls
+          example: false
+        points:
+          type: integer
+          description: Available skill points for purchasing boosters
+          example: 150
+        speed:
+          type: integer
+          description: Movement speed (tiles per second)
+          example: 5
+        view:
+          type: integer
+          description: Vision radius in tiles
+          example: 10
+    view.CheatCodeResponse:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+    view.EnemyBomber:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Salted enemy bomber ID (unique per player)
+          example: enemy-5678
+        pos:
+          type: array
+          description: Current position of enemy bomber
+          example:
+          - 20
+          - 25
+          items:
+            type: integer
+        safe_time:
+          type: integer
+          description: Remaining invulnerability time for the bomber in milliseconds
+          example: 0
+        tier:
+          type: string
+          description: Tier of the enemy bomber
+          example: top_20
+    view.Mob:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Salted mob ID (unique per player)
+          example: mob-42
+        pos:
+          type: array
+          description: Current position of the mob
+          example:
+          - 15
+          - 20
+          items:
+            type: integer
+        safe_time:
+          type: integer
+          description: "// Time the mob remains idle and invulnerable, measured in\
+            \ milliseconds"
+          example: 0
+        type:
+          type: string
+          description: Type mob behavior
+          example: ghost
+    view.ObserverMap:
+      type: object
+      properties:
+        arena:
+          type: object
+          description: "Arena layout (walls, obstacles, bombs)"
+          allOf:
+          - $ref: '#/components/schemas/view.Arena'
+        config:
+          type: object
+          description: Config
+          allOf:
+          - $ref: '#/components/schemas/config.Config'
+        realmName:
+          type: string
+          description: Name of the realm/arena
+          example: Arena1
+        size:
+          type: array
+          description: "Map size in format width,height"
+          example:
+          - 50
+          - 50
+          items:
+            type: integer
+    view.ObserverMobs:
+      type: object
+      properties:
+        mobs:
+          type: array
+          description: List of all mobs on the map
+          items:
+            $ref: '#/components/schemas/view.Mob'
+        realmName:
+          type: string
+          description: Name of the realm/arena
+          example: Arena1
+    view.ObserverPlayer:
+      type: object
+      properties:
+        bomberKillsEnemy:
+          type: integer
+          description: Enemy kills
+          example: 7
+        bomberKillsFriendly:
+          type: integer
+          description: Friendly kills
+          example: 3
+        bomberKillsSystem:
+          type: integer
+          description: System kills (mobs)
+          example: 2
+        bombers:
+          type: array
+          description: List of player's bombers
+          items:
+            $ref: '#/components/schemas/view.Bomber'
+        bombsDestroyedObstacles:
+          type: array
+          description: Distribution of bombs destroying 0..4 obstacles
+          items:
+            type: integer
+        bombsPlaced:
+          type: integer
+          description: Number of bombs placed
+          example: 15
+        boosters:
+          type: array
+          description: List of boosters used by the player
+          items:
+            $ref: '#/components/schemas/view.Booster'
+        distance:
+          type: integer
+          description: Distance traveled by all bombers
+          example: 1200
+        kills:
+          type: integer
+          description: Number of enemy bombers killed
+          example: 5
+        mobKills:
+          type: integer
+          description: Number of mobs killed
+          example: 10
+        multiKillEnemy:
+          type: integer
+          description: Multi-kills of enemy units
+          example: 2
+        multiKillFriendly:
+          type: integer
+          description: Multi-kills of friendly units
+          example: 1
+        multiKillSystem:
+          type: integer
+          description: Multi-kills of system units
+          example: 0
+        name:
+          type: string
+          description: Player name
+          example: Player1
+        obstaclesDestroyed:
+          type: integer
+          description: Number of obstacles destroyed
+          example: 8
+        pointsFromKills:
+          type: integer
+          description: Points earned from killing enemy bombers
+          example: 70
+        pointsFromMobKills:
+          type: integer
+          description: Points earned from killing mobs
+          example: 40
+        pointsFromObstacles:
+          type: integer
+          description: Points earned from destroying obstacles
+          example: 20
+        pointsLostToRespawn:
+          type: integer
+          description: Total points lost due to respawns
+          example: 50
+        rawScore:
+          type: integer
+          description: Raw score without time penalty
+          example: 200
+        respawns:
+          type: integer
+          description: Number of times player's bombers died
+          example: 2
+        score:
+          type: integer
+          description: Total score with time penalty
+          example: 150
+    view.ObserverPlayers:
+      type: object
+      properties:
+        players:
+          type: array
+          description: List of all players in the arena
+          items:
+            $ref: '#/components/schemas/view.ObserverPlayer'
+        realmName:
+          type: string
+          description: Name of the realm/arena
+          example: Arena1
+    view.PlayerInfoResponse:
+      type: object
+      properties:
+        invulnerableDuration:
+          type: integer
+          example: 5
+        player:
+          type: string
+          description: Player name
+          example: player1
+        state:
+          $ref: '#/components/schemas/view.BoosterState'
+        stats:
+          $ref: '#/components/schemas/view.StatCounters'
+        tier:
+          type: string
+          example: Top20
+    view.PlayerResponse:
+      type: object
+      properties:
+        arena:
+          type: object
+          description: "Arena info (walls, obstacles, bombs in vision range)"
+          allOf:
+          - $ref: '#/components/schemas/view.Arena'
+        bombers:
+          type: array
+          description: List of player's bombers
+          items:
+            $ref: '#/components/schemas/view.Bomber'
+        code:
+          type: integer
+        enemies:
+          type: array
+          description: Enemy bombers in vision range
+          items:
+            $ref: '#/components/schemas/view.EnemyBomber'
+        errors:
+          type: array
+          items:
+            type: string
+        map_size:
+          type: array
+          description: "Map size in format [width, height]"
+          example:
+          - 50
+          - 50
+          items:
+            type: integer
+        mobs:
+          type: array
+          description: Mobs in vision range
+          items:
+            $ref: '#/components/schemas/view.Mob'
+        player:
+          type: string
+          description: Player name
+          example: player1
+        raw_score:
+          type: integer
+          description: Player's raw score
+        round:
+          type: string
+          description: Round/arena name
+          example: round-123
+    view.StatCounters:
+      type: object
+      properties:
+        bomberKillsEnemy:
+          type: integer
+          description: Enemy kills
+        bomberKillsFriendly:
+          type: integer
+          description: Friendly kills
+        bomberKillsSystem:
+          type: integer
+          description: System kills (mobs)
+        bombsDestroyedObstacles_0:
+          type: integer
+          description: Distribution of bombs destroying 0..4 obstacles
+        bombsDestroyedObstacles_1:
+          type: integer
+          description: Distribution of bombs destroying 0..4 obstacles
+        bombsDestroyedObstacles_2:
+          type: integer
+          description: Distribution of bombs destroying 0..4 obstacles
+        bombsDestroyedObstacles_3:
+          type: integer
+          description: Distribution of bombs destroying 0..4 obstacles
+        bombsPlaced:
+          type: integer
+          description: Number of bombs placed
+        boosters:
+          type: string
+        distance:
+          type: integer
+          description: Distance traveled by all bombers
+        kills:
+          type: integer
+          description: Number of enemy bombers killed
+        mobKills:
+          type: integer
+          description: Number of mobs killed
+        multiKillEnemy:
+          type: integer
+          description: Multi-kills of enemy units
+        multiKillFriendly:
+          type: integer
+          description: Multi-kills of friendly units
+        multiKillSystem:
+          type: integer
+          description: Multi-kills of system units
+        obstaclesDestroyed:
+          type: integer
+          description: Number of obstacles destroyed
+        pointsFromKills:
+          type: integer
+          description: Points earned from killing enemy bombers
+        pointsFromMobKills:
+          type: integer
+          description: Points earned from killing mobs
+        pointsFromObstacles:
+          type: integer
+          description: Points earned from destroying obstacles
+        pointsLostToRespawn:
+          type: integer
+          description: Total points lost due to respawns
+        rawScore:
+          type: integer
+          description: Raw score without time penalty
+        respawns:
+          type: integer
+          description: Number of times player's bombers died
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      name: X-Auth-Token
+      in: header
+x-original-swagger-version: "2.0"

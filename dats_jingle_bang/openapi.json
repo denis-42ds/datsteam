@@ -1,0 +1,1473 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Геймтон DatsJingleBang",
+    "description": "# Описание игры\nЗа основу взята классическая старая игра bomberman с некоторыми изменениями.\n\nИгроки управляют несколькими юнитами, расчищая карту от уничтожаемых препятствий, сражаясь или убегая от соперников и мобов, стараясь набрать как можно больше очков за отведенные раунды.\n## Важная информация\nВо время тестовых раундов возможна корректировка баланса игры. Также при нахождении ошибок возможна перезагрузка сервера со сбросом раунда. В этих случаях будет оповещение в топике \"новости\".\n\nВсе сообщения в топик \"Поддержка\" должны быть с тегом бота @DatsHackathonsBot, иначе сообщения будут удалены.\n\nО всех найденных ошибках просьба сообщать в топик \"поддержка\".\n\nЕсли вы нашли, что в документации есть неточность либо недосказанность - напишите об этом в топик \"поддержка\".\n\nВ случае технических ошибок во время финальных раундов результаты раунда могут быть отменены и будет добавлен дополнительный раунд.\n\nВ случае возникновения обоснованных подозрений в нечестной игре или мультиаккаунтинге со стороны команды организаторы оставляют за собой право принять решение о её дисквалификации.\n## Сервер игры\nЕсть два независимых сервера. Один тестовый – будет работать все дни геймтона, и один основной, на котором будут проходить финальные раунды.\n\nСсылка на свагер https://games.datsteam.dev/static/datsjinglebang/docs/openapi/\n\nСсылка на статистику https://gamethon.datsteam.dev/datsjinglebang/boomstats\n## Раунды\nРаунд - это ограниченный по времени этап игры с заданным началом и окончанием, после которого фиксируется результат.\n\nНа каждое начало раунда весь прогресс юнитов сбрасывается.\n\nРасписание тестовых и финальных раундов можно посмотреть в соответствующем API.\n## Карта\nИгра происходит на 2D карте, которая имеет следующие типы объектов:\n- непроходимые препятствия (нельзя уничтожить)\n- препятствия, которые можно уничтожить\n- юниты команды и ее соперников\n- мобы\n- бомбы\n\nРазмер карты может корректироваться для каждого раунда в зависимости от количества играющих команд.\nНа разных раундах могут быть разные карты (отличаются расположением препятствий).\n## Игровой мир\nСобытия в мире происходят с частотой дискретизации около 50мс.\n## Юниты\nКоманда получает под управление 6 юнитов, которыми может управлять.\n\nКаждый юнит может перемещаться по карте и устанавливать бомбы.\n\nВ случае потери всех юнитов - они заново появятся на карте, команда получит штраф в виде 10% от текущих набранных очков.\n### Обзор юнитов\nКаждый юнит видит все объекты в радиусе 5 клеток от себя. Радис считается по формуле\n$$ r^2 = x^2 + y^2 $$\n## Мобы\nВ ходе игры на карте будут появляться неигровые персонажи - мобы. Они патрулируют карты в соответствии со своим паттерном, зависящим от типа.\n### Призрак\nБудьте осторожны, на тесных улицах бродят неупокоенные духи прошлых игроков. Они медленные, но целеустремленные.\n\nСкорость передвижения - 1.\n\nОсобенности - способен проходить через препятствия.\n\nРадиус обзора - 10.\n\nПаттерн движения - аналогичен патрульному, пока в его поле зрения не появится юнит игрока. После обнаружения цели он назначает её основной и начинает преследование, которое продолжается до тех пор, пока юнит не покинет область видимости или не будет уничтожен.\n### Патрульный\nЛенивый малый. Ему сказали патрулировать - он и пошел, куда ноги поведут.\n\nСкорость передвижения - 1.\n\nОсобенности - нет.\n\nПаттерн движения - выбирает произвольное свободное направление и может сменить его в любой момент.\n\nЕсли любой юнит игрока пересечется с мобом на одной клетке - то юнит игрока будет уничтожен, а моб продолжит свое движение.\n\nМоб появляется в спящем состоянии. После 10 секунд сна, моб начинает свой патруль в соответствии со своим типом.\n\nПока моб спит, юниты игроков могут свободно проходить через него и его нельзя взорвать.\n## Управление юнитом\nКаждому юниту можно задать команду на передвижение и установку бомб.\n\nЮнит может передвигаться только по смежным клеткам и не может ходить наискосок.\n\nПока юнит не завершит передвижение ему нельзя отдать команду на новое передвижение.\n\nПередвижение задается списком координат (max 30), по которым должен переместиться юнит.\n\nЮнит может проходить сквозь своих юнитов и юнитов оппонентов.\n\nЮнит не может проходить сквозь любые препятствия**, через бомбы**. Если бомбу установили прямо под юнитом, то он может сойти с этой клетки.\n\n** Если не взяты соответствующие усиления.\n\nУстановка бомб задается координатами, на которых они должны быть расположены. Эти координаты должны присутствовать на указанном пути юнита в момент его передвижения.\n\nЮниты имеют скорость передвижения исчисляемую в клетках в секунду(всегда целочисленное значение). Стартовая скорость 2 кл/с.\n\nЕсли по ходу движения юнит доходит до клетки, на которой кто-либо установил бомбу и она мешает ему достичь цели, то юнит останавливается на клетке перед бомбой и его путь сбрасывается.\n\nДля каждого юнита ошибки обрабатываются отдельно. То есть если в запросе одному юниту отдана валидная команда, а второму нет - то первая команда будет принята, а вторая отброшена и в ответе будет соответствующая ошибка.\n\n## Бомбы\nКаждый юнит во время движения может устанавливать бомбы. На старте раунда все имеют по одной бомбе, которая имеет радиус взрыва равный единице и время до взрыва равное 8 секундам.\n\nЗа скилл поинты можно увеличить количество бомб, радиус взрыва и уменьшить время до взрыва.\n\nНовая бомба появится заново у юнита, как только взорвется старая.\n\nВзрыв бомбы происходит в виде креста (рисунок 1). Длина луча определяется текущим радиусом взрыва.\n\nЛуч взрыва бомбы уничтожает на своем пути:\n- всех юнитов и мобов\n- разрушаемые препятствия\n\nУничтожив препятствие или другую бомбу луч дальше не распространяется. Уничтоженные юниты и мобы не мешают распространению луча бомбы.\n\nКоманду установки бомб можно отдать только в совместно с командой передвижения. Игрок указывает список координат в которых по ходу пути будут выставлены бомбы (рисунок 2).\n\nКаждая бомба имеет свой таймер, который запускается в момент ее установки на клетку.\n\nЕсли луч взрыва бомбы задевает другую бомбу, то дальше он не распространяется, а затронутая бомба взрывается досрочно.\n\nКоординаты установки бомб можно указывать в произвольном порядке. Бомба будет установлена в тот момент, как только юнит попадет на указанную координату.\n## Усиление юнитов\nКаждые 1.5 минуты с начала раунда команда получает скилл поинт. Их можно потратить на одно из усилений. За один раунд можно получить максимум 10 скилл поинтов.\n### апгрейд карманов\nКаждый юнит нашивает дополнительный карман на одежду, что позволяет ему переносить большее количество своего основного аргумента.\n\n+1 к максимальному количеству бомб.\n\nСтоимость: 1 скилл поинт\n### апгрейд бомбы\nКогда не пропускал уроки химии.\n\n+1 к радиусу взрыва бомбы\n\nСтоимость: 1 скилл поинт\n### апгрейд тела\nРегулярные походы в спортзал всегда приносят свои плоды.\n\n+1 к скорости передвижения. Максимум 3 улучшения.\n\nСтоимость: 1 скилл поинт\n### апгрейд зрения\nНадеваем очки и с каждым новым уровнем улучшаем линзы. Кто-то может вас назвать очкариком, но вы теперь сможете его увидеть заранее, чтобы получше подготовиться.\n\n+3 к области видимости юнитов\n\nСтоимость: 1 скилл поинт\n### апгрейд софт скилов\nВы все более исскусно овладеваете ораторским исскуством и можете привлекать все больше союзников на свою сторону.\n\n+1 к максимальному количеству юнитов.\n\nСтоимость: 2 скилл поинта\n\nЮнит появляется сразу после запроса рядом с рандомным союзным юнитом.\n### апгрейд брони\nНадень куртку потеплее, а лучше еще и двое штанов - на улице прохладно. Ну и мало ли где это еще может помочь.\n\n+1 к броне.\n\nКаждый уровень брони позволяет пережить 1 взрыв. Поглотив взрыв, броня теряет 1 уровень.\n\nБроня не защищает от урона мобов. Восстановить броню можно только при возрождении юнитов.\n\nПри взятии улучшения, все юниты увеличивают текущий уровень брони на 1.\n\nСтоимость: 1 скилл поинт\n### апгрейд фитиля бомбы\nИногда короче не значит хуже.\n\n-2 секунды до взрыва бомбы. Максимум 3 улучшения.\n\nСтоимость: 1 скилл поинт\n### апгрейд акробатики\nНемного паркура и вот уже перед нами остается все меньше непреодолимых препятствий.\n\nУлучшение проходимости юнита.\n\nСтоимость: 2 скилл поинта\n\nНа 1 уровне позволяет проходить через бомбы.\n\nНа 2 уровне позволяет проходить через разрушаемые препятствия.\n\nНа 3 уровне позволяет проходить через все препятствия.\n## Возрождение юнитов\nНа старте раунда все юниты возрождаются в одной рандомной координате карты равномерно удаленной от точек возрождения других команд.\n\nПри смерти последнего юнита они все так же будут возрождены на рандомной координате карты.\n\nПри возрождении юнитов они получают неуязвимость к взрывам бомб и мобам на 5 секунд.\n## Начисление/потеря очков в раунде\nПри уничтожении разрушаемого препятствия взрывом бомбы команда получает 1 очко. Если взрыв уничтожил больше 1 препятствия, то будут начислены дополнительные очки.\n\nЗа второе препятствие начисляется 2 очка, за третье - 3, за четвертое - 4.\n\nМаксимальное количество очков, которые можно набрать за один взрыв - 10 (1 + 2 + 3 + 4).\n\nЗа уничтожение юнита соперника начисляется 10.\n\nЗа уничтожение моба начисляется 10 очков.\n\nЗа возрождение юнитов команда получает штраф в 10% от текущих очков.\n## Определение победителя\nЗа каждый раунд игрокам будут начисляться баллы, которые являются критерием для победы.\n\nВ зависимости от того, какое место в раунде по очкам заняла команда ей будут начислены баллы в соответствии с таблицей 1.\n\nЕсли в раунде одинаковое количество очков набрали несколько команд, то все они получат одинаковое количество баллов за раунд.\n\nЕсли по итогу всех финальных раундов у нескольких команд одинаковое количество баллов, то будут введены дополнительные критерии, чтобы распределить призовые места.\n### Дополнительные критерии\n- взорвано больше всего юнитов соперников\n- взорвано меньше всего бомб\n- пройден меньший путь\n## Критерий активного игрока\nСертификат участия получат те игроки, команды которых участвовали в половине финальных раундов и в каждом взорвали хотя бы 1 препятствие.\n## Ограничения\nИгроки могут отправлять не более 3 запросов в секунду.\n## Достижения\n### Счастливчик\nЗанять 77-е место в 4 раунде.\n\nВ случае, если на 77-м месте окажется несколько команд, достижение отдается одной путём рандомного выбора.\n### Demolition Master\nВ 1 раунде сделать цепочку взрывов из минимум 4 бомб, каждая из которых взрывает другую бомбу и уничтожает минимум 1 препятствие.\n\nОдна бомба может взорвать больше одной бомбы, но обязательно, чтобы каждая бомба взорвала препятствие.\n\nНе обязательно чтобы все бомбы принадлежали одному игроку, достижение получит тот, чья бомба запустила цепную реакцию.\n### Читер\nПервым найти и использовать рабочий чит-код. Возможно получить в любой момент времени. Работает только на тестовом сервере.\n\nЕсли нашли до начала тестовых раундов, пришлите боту поддержки в личку. \n\nИногда ленд и баннер могут содержать чуть больше, чем видно на первый взгляд...\n## Таблица 1. Баллы за место\n\n<table><tr><th>№</th><th>баллы</th><th>№</th><th>баллы</th></tr><tr><td>1</td><td>170</td><td>27</td><td>24</td></tr><tr><td>2</td><td>114</td><td>28</td><td>23</td></tr><tr><td>3</td><td>86</td><td>29</td><td>22</td></tr><tr><td>4</td><td>69</td><td>30</td><td>21</td></tr><tr><td>5</td><td>58</td><td>31</td><td>20</td></tr><tr><td>6</td><td>50</td><td>32</td><td>19</td></tr><tr><td>7</td><td>44</td><td>33</td><td>18</td></tr><tr><td>8</td><td>43</td><td>34</td><td>17</td></tr><tr><td>9</td><td>42</td><td>35</td><td>16</td></tr><tr><td>10</td><td>41</td><td>36</td><td>15</td></tr><tr><td>11</td><td>40</td><td>37</td><td>14</td></tr><tr><td>12</td><td>39</td><td>38</td><td>13</td></tr><tr><td>13</td><td>38</td><td>39</td><td>12</td></tr><tr><td>14</td><td>37</td><td>40</td><td>11</td></tr><tr><td>15</td><td>36</td><td>41</td><td>10</td></tr><tr><td>16</td><td>35</td><td>42</td><td>9</td></tr><tr><td>17</td><td>34</td><td>43</td><td>8</td></tr><tr><td>18</td><td>33</td><td>44</td><td>7</td></tr><tr><td>19</td><td>32</td><td>45</td><td>6</td></tr><tr><td>20</td><td>31</td><td>46</td><td>5</td></tr><tr><td>21</td><td>30</td><td>47</td><td>4</td></tr><tr><td>22</td><td>29</td><td>48</td><td>3</td></tr><tr><td>23</td><td>28</td><td>49</td><td>2</td></tr><tr><td>24</td><td>27</td><td>50</td><td>1</td></tr><tr><td>25</td><td>26</td><td>51</td><td>1</td></tr><tr><td>26</td><td>25</td><td>…</td><td>1</td></tr></table>\nрисунок 1<img src=\"./img/1.jpg\" /><br /><br />рисунок 2<img src=\"./img/2.jpg\" />",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://games-test.datsteam.dev",
+      "description": "Test server"
+    },
+    {
+      "url": "https://games.datsteam.dev",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/arena": {
+      "get": {
+        "tags": ["player"],
+        "summary": "Game arena, viewed by player",
+        "responses": {
+          "200": {
+            "description": "player state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/view.PlayerResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/booster": {
+      "get": {
+        "tags": ["player"],
+        "summary": "Get available boosters",
+        "responses": {
+          "200": {
+            "description": "list of available boosters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/view.AvailableBoosterResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "you are not registered in the game",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["player"],
+        "summary": "Activate booster",
+        "requestBody": {
+          "description": "Booster choice",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/command.Booster"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "booster applied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid power-up selection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "x-codegen-request-body-name": "request"
+      }
+    },
+    "/api/cheatcode": {
+      "post": {
+        "tags": ["player"],
+        "summary": "?",
+        "requestBody": {
+          "description": "Code",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/command.CheatCode"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "cheat code applied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/view.CheatCodeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "missing code parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "x-codegen-request-body-name": "request"
+      }
+    },
+    "/api/logs": {
+      "get": {
+        "tags": ["player"],
+        "summary": "Player logs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/player.LogMessage"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/move": {
+      "post": {
+        "tags": ["player"],
+        "summary": "Move bomberman",
+        "description": "Commands for player's bombermans",
+        "requestBody": {
+          "description": "Move command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/command.Player"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "x-codegen-request-body-name": "request"
+      }
+    },
+    "/api/rounds": {
+      "get": {
+        "tags": ["rounds"],
+        "summary": "game rounds",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/swagger.RoundListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/gamesdk.PublicError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "command.Bomber": {
+        "type": "object",
+        "properties": {
+          "bombs": {
+            "type": "array",
+            "description": "path coordinates",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          "id": {
+            "type": "string",
+            "description": "unique identifier of the bomber"
+          },
+          "path": {
+            "type": "array",
+            "description": "planned movement path, max 30 steps",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      },
+      "command.Booster": {
+        "type": "object",
+        "properties": {
+          "booster": {
+            "type": "integer"
+          }
+        }
+      },
+      "command.CheatCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        }
+      },
+      "command.Player": {
+        "type": "object",
+        "properties": {
+          "bombers": {
+            "type": "array",
+            "description": "list of bombers controlled by the player",
+            "items": {
+              "$ref": "#/components/schemas/command.Bomber"
+            }
+          }
+        }
+      },
+      "config.BoosterConfig": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "description": "запрещать покупку если layer.Boosters больше"
+          },
+          "prices": {
+            "type": "array",
+            "description": "Type    enum.BoosterType `json:\"type\"`",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "quality": {
+            "type": "integer",
+            "description": "если 1 и скорость то при покупке добавляется 1 к скорости в Player.Config"
+          }
+        }
+      },
+      "config.CheatConfig": {
+        "type": "object",
+        "properties": {
+          "bombersPenalty": {
+            "type": "integer"
+          },
+          "cheatCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cheatCodesEnable": {
+            "type": "boolean"
+          },
+          "pointBonus": {
+            "type": "integer"
+          }
+        }
+      },
+      "config.Config": {
+        "type": "object",
+        "properties": {
+          "achievements": {
+            "type": "array",
+            "description": "Achievements for players, optional",
+            "items": {
+              "type": "string"
+            }
+          },
+          "chainReactionBombCounts": {
+            "type": "integer"
+          },
+          "cheats": {
+            "$ref": "#/components/schemas/config.CheatConfig"
+          },
+          "map": {
+            "type": "object",
+            "description": "Map configuration",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/config.MapConfig"
+              }
+            ]
+          },
+          "mob": {
+            "type": "object",
+            "description": "Mob configuration",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/config.MobConfig"
+              }
+            ]
+          },
+          "player": {
+            "type": "object",
+            "description": "Player configuration",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/config.PlayerConfig"
+              }
+            ]
+          },
+          "printMap": {
+            "type": "boolean",
+            "description": "PrintMap print the generated map to the console"
+          },
+          "respawnDelay": {
+            "type": "integer"
+          },
+          "scores": {
+            "type": "array",
+            "description": "Scores for places",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "seed": {
+            "type": "integer",
+            "description": "Seed for the random number generator"
+          },
+          "skill": {
+            "type": "object",
+            "description": "SkillConfig configuration",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/config.SkillConfig"
+              }
+            ]
+          },
+          "spawnAttempts": {
+            "type": "integer",
+            "description": "SpawnAttempts attempts to spawn in an empty spot"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/config.StatsConfig"
+          },
+          "topPlayersGroupSize": {
+            "type": "integer",
+            "description": "TopPlayersGroupSize number of players in a group for top players listing"
+          }
+        }
+      },
+      "config.MapConfig": {
+        "type": "object",
+        "properties": {
+          "blocksPerPlayer": {
+            "type": "integer",
+            "description": "BlocksPerPlayer set the required number of blocks per player."
+          },
+          "crossGap": {
+            "type": "integer",
+            "description": "CrossGap distance between crosses"
+          },
+          "crossSize": {
+            "type": "integer",
+            "description": "only for V2 generator"
+          },
+          "densityFactor": {
+            "type": "number",
+            "description": "DensityFactor map density coefficient."
+          },
+          "minSize": {
+            "type": "integer",
+            "description": "MinSize minimum map size."
+          },
+          "mobDistribution": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          },
+          "mobPercentage": {
+            "type": "integer",
+            "description": "MobPercentage percentage of mobs on the map"
+          },
+          "padding": {
+            "type": "integer",
+            "description": "Padding number of cells to clear around the player."
+          },
+          "version": {
+            "type": "integer",
+            "description": "Version of the map generator."
+          }
+        }
+      },
+      "config.MobConfig": {
+        "type": "object",
+        "properties": {
+          "hysteresis": {
+            "type": "integer"
+          },
+          "invulnerableDuration": {
+            "type": "integer"
+          },
+          "maxWanderSteps": {
+            "type": "integer"
+          },
+          "minWanderSteps": {
+            "type": "integer"
+          },
+          "respawn": {
+            "type": "boolean"
+          },
+          "speed": {
+            "type": "integer"
+          },
+          "vision": {
+            "type": "integer"
+          }
+        }
+      },
+      "config.PlayerConfig": {
+        "type": "object",
+        "properties": {
+          "armor": {
+            "type": "integer"
+          },
+          "bombDelay": {
+            "type": "integer"
+          },
+          "bombers": {
+            "type": "integer"
+          },
+          "bombs": {
+            "type": "integer"
+          },
+          "canPassBombs": {
+            "type": "boolean"
+          },
+          "canPassObstacles": {
+            "type": "boolean"
+          },
+          "canPassWalls": {
+            "type": "boolean"
+          },
+          "expectedCount": {
+            "type": "integer"
+          },
+          "invulnerableDuration": {
+            "type": "integer"
+          },
+          "logLimit": {
+            "type": "integer",
+            "description": "LogLimit Max number of logs per player"
+          },
+          "maxPath": {
+            "type": "integer"
+          },
+          "maxSkillPoints": {
+            "type": "integer"
+          },
+          "range": {
+            "type": "integer"
+          },
+          "speed": {
+            "type": "integer"
+          },
+          "view": {
+            "type": "integer"
+          }
+        }
+      },
+      "config.SkillConfig": {
+        "type": "object",
+        "properties": {
+          "boosters": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/config.BoosterConfig"
+            }
+          },
+          "deathPenaltyPointsPercentage": {
+            "type": "integer"
+          },
+          "period": {
+            "type": "integer",
+            "description": "времы мс через которое будут выдаваться поинты (Period * time.Millisecond )"
+          },
+          "points": {
+            "type": "integer"
+          }
+        }
+      },
+      "config.StatsConfig": {
+        "type": "object",
+        "properties": {
+          "kill_points": {
+            "type": "integer"
+          },
+          "mob_kill_points": {
+            "type": "integer"
+          },
+          "obstacle_points": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "gamesdk.PublicError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "player.LogMessage": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          }
+        }
+      },
+      "swagger.Achieve": {
+        "type": "object",
+        "properties": {
+          "counters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "player": {
+            "type": "string"
+          },
+          "realm": {
+            "type": "string"
+          }
+        }
+      },
+      "swagger.PlayerStats": {
+        "type": "object",
+        "properties": {
+          "attempt": {
+            "type": "integer"
+          },
+          "counters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "endedAt": {
+            "type": "string"
+          },
+          "player": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          }
+        }
+      },
+      "swagger.RealmStats": {
+        "type": "object",
+        "properties": {
+          "game": {
+            "type": "string"
+          },
+          "players": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/swagger.PlayerStats"
+            }
+          },
+          "realm": {
+            "type": "string"
+          },
+          "startedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "swagger.RealmStatsResponse": {
+        "type": "object",
+        "properties": {
+          "achieves": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/swagger.Achieve"
+            }
+          },
+          "realms": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/swagger.RealmStats"
+            }
+          },
+          "total": {
+            "$ref": "#/components/schemas/swagger.TotalStats"
+          }
+        }
+      },
+      "swagger.RoundListResponse": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string",
+            "example": "1"
+          },
+          "now": {
+            "type": "string",
+            "example": "2021-01-01T00:00:00.000Z"
+          },
+          "rounds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/swagger.RoundResponse"
+            }
+          }
+        }
+      },
+      "swagger.RoundResponse": {
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "integer",
+            "example": 60
+          },
+          "endAt": {
+            "type": "string",
+            "example": "2021-01-01T00:00:00.000Z"
+          },
+          "name": {
+            "type": "string",
+            "example": "Round 1"
+          },
+          "repeat": {
+            "type": "integer",
+            "example": 1
+          },
+          "startAt": {
+            "type": "string",
+            "example": "2021-01-01T00:00:00.000Z"
+          },
+          "status": {
+            "type": "string",
+            "example": "active"
+          }
+        }
+      },
+      "swagger.TotalStats": {
+        "type": "object",
+        "properties": {
+          "players": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/swagger.PlayerStats"
+            }
+          }
+        }
+      },
+      "view.Arena": {
+        "type": "object",
+        "properties": {
+          "bombs": {
+            "type": "array",
+            "description": "List of active bombs on the arena",
+            "items": {
+              "$ref": "#/components/schemas/view.Bomb"
+            }
+          },
+          "obstacles": {
+            "type": "array",
+            "description": "List of destructible obstacle coordinates",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          "walls": {
+            "type": "array",
+            "description": "List of indestructible wall coordinates",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      },
+      "view.AvailableBooster": {
+        "type": "object",
+        "properties": {
+          "cost": {
+            "type": "integer",
+            "description": "Cost in skill points",
+            "example": 50
+          },
+          "type": {
+            "type": "string",
+            "description": "Booster type name",
+            "example": "speed"
+          }
+        }
+      },
+      "view.AvailableBoosterResponse": {
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "array",
+            "description": "List of boosters available for purchase",
+            "items": {
+              "$ref": "#/components/schemas/view.AvailableBooster"
+            }
+          },
+          "state": {
+            "type": "object",
+            "description": "Current player booster state",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/view.BoosterState"
+              }
+            ]
+          }
+        }
+      },
+      "view.Bomb": {
+        "type": "object",
+        "properties": {
+          "pos": {
+            "type": "array",
+            "description": "Position of the bomb",
+            "example": [10, 15],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "range": {
+            "type": "integer",
+            "description": "Explosion radius in tiles",
+            "example": 3
+          },
+          "timer": {
+            "type": "number",
+            "description": "Seconds until explosion",
+            "example": 2.5
+          }
+        }
+      },
+      "view.Bomber": {
+        "type": "object",
+        "properties": {
+          "alive": {
+            "type": "boolean",
+            "description": "Whether the bomber is alive",
+            "example": true
+          },
+          "armor": {
+            "type": "integer",
+            "description": "Current armor points (hits before death)",
+            "example": 3
+          },
+          "bombs_available": {
+            "type": "integer",
+            "description": "Number of bombs the bomber can place",
+            "example": 2
+          },
+          "can_move": {
+            "type": "boolean",
+            "description": "Moving bomber cannot accept new move commands",
+            "example": false
+          },
+          "id": {
+            "type": "string",
+            "description": "Unique bomber ID",
+            "example": "bomber-1234"
+          },
+          "pos": {
+            "type": "array",
+            "description": "Current position on the map",
+            "example": [10, 15],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "safe_time": {
+            "type": "integer",
+            "description": "Remaining invulnerability time for the bomber in milliseconds",
+            "example": 0
+          },
+          "tier": {
+            "type": "string",
+            "description": "Tier of the bomber",
+            "example": "top_20"
+          }
+        }
+      },
+      "view.Booster": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the booster",
+            "example": "Speed"
+          },
+          "time": {
+            "type": "string",
+            "example": "2025-12-07T12:00:00.000Z"
+          }
+        }
+      },
+      "view.BoosterState": {
+        "type": "object",
+        "properties": {
+          "armor": {
+            "type": "integer",
+            "description": "Base armor for new bombers",
+            "example": 2
+          },
+          "bomb_delay": {
+            "type": "integer",
+            "description": "Time in milliseconds before bomb explodes",
+            "example": 3000
+          },
+          "bomb_range": {
+            "type": "integer",
+            "description": "Explosion radius of bombs in tiles",
+            "example": 3
+          },
+          "bombers": {
+            "type": "integer",
+            "description": "Maximum number of bombers player can have",
+            "example": 3
+          },
+          "bombs": {
+            "type": "integer",
+            "description": "Maximum number of simultaneous bombs per bomber",
+            "example": 2
+          },
+          "can_pass_bombs": {
+            "type": "boolean",
+            "description": "Whether bombers can walk through bombs",
+            "example": false
+          },
+          "can_pass_obstacles": {
+            "type": "boolean",
+            "description": "Whether bombers can walk through obstacles",
+            "example": false
+          },
+          "can_pass_walls": {
+            "type": "boolean",
+            "description": "Whether bombers can walk through walls",
+            "example": false
+          },
+          "points": {
+            "type": "integer",
+            "description": "Available skill points for purchasing boosters",
+            "example": 150
+          },
+          "speed": {
+            "type": "integer",
+            "description": "Movement speed (tiles per second)",
+            "example": 5
+          },
+          "view": {
+            "type": "integer",
+            "description": "Vision radius in tiles",
+            "example": 10
+          }
+        }
+      },
+      "view.CheatCodeResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "view.EnemyBomber": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Salted enemy bomber ID (unique per player)",
+            "example": "enemy-5678"
+          },
+          "pos": {
+            "type": "array",
+            "description": "Current position of enemy bomber",
+            "example": [20, 25],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "safe_time": {
+            "type": "integer",
+            "description": "Remaining invulnerability time for the bomber in milliseconds",
+            "example": 0
+          },
+          "tier": {
+            "type": "string",
+            "description": "Tier of the enemy bomber",
+            "example": "top_20"
+          }
+        }
+      },
+      "view.Mob": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Salted mob ID (unique per player)",
+            "example": "mob-42"
+          },
+          "pos": {
+            "type": "array",
+            "description": "Current position of the mob",
+            "example": [15, 20],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "safe_time": {
+            "type": "integer",
+            "description": "// Time the mob remains idle and invulnerable, measured in milliseconds",
+            "example": 0
+          },
+          "type": {
+            "type": "string",
+            "description": "Type mob behavior",
+            "example": "ghost"
+          }
+        }
+      },
+      "view.ObserverMap": {
+        "type": "object",
+        "properties": {
+          "arena": {
+            "type": "object",
+            "description": "Arena layout (walls, obstacles, bombs)",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/view.Arena"
+              }
+            ]
+          },
+          "config": {
+            "type": "object",
+            "description": "Config",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/config.Config"
+              }
+            ]
+          },
+          "realmName": {
+            "type": "string",
+            "description": "Name of the realm/arena",
+            "example": "Arena1"
+          },
+          "size": {
+            "type": "array",
+            "description": "Map size in format width,height",
+            "example": [50, 50],
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "view.ObserverMobs": {
+        "type": "object",
+        "properties": {
+          "mobs": {
+            "type": "array",
+            "description": "List of all mobs on the map",
+            "items": {
+              "$ref": "#/components/schemas/view.Mob"
+            }
+          },
+          "realmName": {
+            "type": "string",
+            "description": "Name of the realm/arena",
+            "example": "Arena1"
+          }
+        }
+      },
+      "view.ObserverPlayer": {
+        "type": "object",
+        "properties": {
+          "bomberKillsEnemy": {
+            "type": "integer",
+            "description": "Enemy kills",
+            "example": 7
+          },
+          "bomberKillsFriendly": {
+            "type": "integer",
+            "description": "Friendly kills",
+            "example": 3
+          },
+          "bomberKillsSystem": {
+            "type": "integer",
+            "description": "System kills (mobs)",
+            "example": 2
+          },
+          "bombers": {
+            "type": "array",
+            "description": "List of player's bombers",
+            "items": {
+              "$ref": "#/components/schemas/view.Bomber"
+            }
+          },
+          "bombsDestroyedObstacles": {
+            "type": "array",
+            "description": "Distribution of bombs destroying 0..4 obstacles",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "bombsPlaced": {
+            "type": "integer",
+            "description": "Number of bombs placed",
+            "example": 15
+          },
+          "boosters": {
+            "type": "array",
+            "description": "List of boosters used by the player",
+            "items": {
+              "$ref": "#/components/schemas/view.Booster"
+            }
+          },
+          "distance": {
+            "type": "integer",
+            "description": "Distance traveled by all bombers",
+            "example": 1200
+          },
+          "kills": {
+            "type": "integer",
+            "description": "Number of enemy bombers killed",
+            "example": 5
+          },
+          "mobKills": {
+            "type": "integer",
+            "description": "Number of mobs killed",
+            "example": 10
+          },
+          "multiKillEnemy": {
+            "type": "integer",
+            "description": "Multi-kills of enemy units",
+            "example": 2
+          },
+          "multiKillFriendly": {
+            "type": "integer",
+            "description": "Multi-kills of friendly units",
+            "example": 1
+          },
+          "multiKillSystem": {
+            "type": "integer",
+            "description": "Multi-kills of system units",
+            "example": 0
+          },
+          "name": {
+            "type": "string",
+            "description": "Player name",
+            "example": "Player1"
+          },
+          "obstaclesDestroyed": {
+            "type": "integer",
+            "description": "Number of obstacles destroyed",
+            "example": 8
+          },
+          "pointsFromKills": {
+            "type": "integer",
+            "description": "Points earned from killing enemy bombers",
+            "example": 70
+          },
+          "pointsFromMobKills": {
+            "type": "integer",
+            "description": "Points earned from killing mobs",
+            "example": 40
+          },
+          "pointsFromObstacles": {
+            "type": "integer",
+            "description": "Points earned from destroying obstacles",
+            "example": 20
+          },
+          "pointsLostToRespawn": {
+            "type": "integer",
+            "description": "Total points lost due to respawns",
+            "example": 50
+          },
+          "rawScore": {
+            "type": "integer",
+            "description": "Raw score without time penalty",
+            "example": 200
+          },
+          "respawns": {
+            "type": "integer",
+            "description": "Number of times player's bombers died",
+            "example": 2
+          },
+          "score": {
+            "type": "integer",
+            "description": "Total score with time penalty",
+            "example": 150
+          }
+        }
+      },
+      "view.ObserverPlayers": {
+        "type": "object",
+        "properties": {
+          "players": {
+            "type": "array",
+            "description": "List of all players in the arena",
+            "items": {
+              "$ref": "#/components/schemas/view.ObserverPlayer"
+            }
+          },
+          "realmName": {
+            "type": "string",
+            "description": "Name of the realm/arena",
+            "example": "Arena1"
+          }
+        }
+      },
+      "view.PlayerInfoResponse": {
+        "type": "object",
+        "properties": {
+          "invulnerableDuration": {
+            "type": "integer",
+            "example": 5
+          },
+          "player": {
+            "type": "string",
+            "description": "Player name",
+            "example": "player1"
+          },
+          "state": {
+            "$ref": "#/components/schemas/view.BoosterState"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/view.StatCounters"
+          },
+          "tier": {
+            "type": "string",
+            "example": "Top20"
+          }
+        }
+      },
+      "view.PlayerResponse": {
+        "type": "object",
+        "properties": {
+          "arena": {
+            "type": "object",
+            "description": "Arena info (walls, obstacles, bombs in vision range)",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/view.Arena"
+              }
+            ]
+          },
+          "bombers": {
+            "type": "array",
+            "description": "List of player's bombers",
+            "items": {
+              "$ref": "#/components/schemas/view.Bomber"
+            }
+          },
+          "code": {
+            "type": "integer"
+          },
+          "enemies": {
+            "type": "array",
+            "description": "Enemy bombers in vision range",
+            "items": {
+              "$ref": "#/components/schemas/view.EnemyBomber"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "map_size": {
+            "type": "array",
+            "description": "Map size in format [width, height]",
+            "example": [50, 50],
+            "items": {
+              "type": "integer"
+            }
+          },
+          "mobs": {
+            "type": "array",
+            "description": "Mobs in vision range",
+            "items": {
+              "$ref": "#/components/schemas/view.Mob"
+            }
+          },
+          "player": {
+            "type": "string",
+            "description": "Player name",
+            "example": "player1"
+          },
+          "raw_score": {
+            "type": "integer",
+            "description": "Player's raw score"
+          },
+          "round": {
+            "type": "string",
+            "description": "Round/arena name",
+            "example": "round-123"
+          }
+        }
+      },
+      "view.StatCounters": {
+        "type": "object",
+        "properties": {
+          "bomberKillsEnemy": {
+            "type": "integer",
+            "description": "Enemy kills"
+          },
+          "bomberKillsFriendly": {
+            "type": "integer",
+            "description": "Friendly kills"
+          },
+          "bomberKillsSystem": {
+            "type": "integer",
+            "description": "System kills (mobs)"
+          },
+          "bombsDestroyedObstacles_0": {
+            "type": "integer",
+            "description": "Distribution of bombs destroying 0..4 obstacles"
+          },
+          "bombsDestroyedObstacles_1": {
+            "type": "integer",
+            "description": "Distribution of bombs destroying 0..4 obstacles"
+          },
+          "bombsDestroyedObstacles_2": {
+            "type": "integer",
+            "description": "Distribution of bombs destroying 0..4 obstacles"
+          },
+          "bombsDestroyedObstacles_3": {
+            "type": "integer",
+            "description": "Distribution of bombs destroying 0..4 obstacles"
+          },
+          "bombsPlaced": {
+            "type": "integer",
+            "description": "Number of bombs placed"
+          },
+          "boosters": {
+            "type": "string"
+          },
+          "distance": {
+            "type": "integer",
+            "description": "Distance traveled by all bombers"
+          },
+          "kills": {
+            "type": "integer",
+            "description": "Number of enemy bombers killed"
+          },
+          "mobKills": {
+            "type": "integer",
+            "description": "Number of mobs killed"
+          },
+          "multiKillEnemy": {
+            "type": "integer",
+            "description": "Multi-kills of enemy units"
+          },
+          "multiKillFriendly": {
+            "type": "integer",
+            "description": "Multi-kills of friendly units"
+          },
+          "multiKillSystem": {
+            "type": "integer",
+            "description": "Multi-kills of system units"
+          },
+          "obstaclesDestroyed": {
+            "type": "integer",
+            "description": "Number of obstacles destroyed"
+          },
+          "pointsFromKills": {
+            "type": "integer",
+            "description": "Points earned from killing enemy bombers"
+          },
+          "pointsFromMobKills": {
+            "type": "integer",
+            "description": "Points earned from killing mobs"
+          },
+          "pointsFromObstacles": {
+            "type": "integer",
+            "description": "Points earned from destroying obstacles"
+          },
+          "pointsLostToRespawn": {
+            "type": "integer",
+            "description": "Total points lost due to respawns"
+          },
+          "rawScore": {
+            "type": "integer",
+            "description": "Raw score without time penalty"
+          },
+          "respawns": {
+            "type": "integer",
+            "description": "Number of times player's bombers died"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-Auth-Token",
+        "in": "header"
+      }
+    }
+  },
+  "x-original-swagger-version": "2.0"
+}
