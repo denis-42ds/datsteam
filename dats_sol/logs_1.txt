@@ -1,0 +1,800 @@
+21:03:53 - INFO - DatsSol bot started. Waiting for first turn...
+21:03:55 - INFO - ══ Turn    0  (next in 0.00s) ══
+21:03:55 - WARNING - No plantations — waiting for respawn…
+21:03:56 - INFO - ══ Turn  356  (next in 0.77s) ══
+21:03:56 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:03:56 - INFO -   → Upgrade selected: settlement_limit (currently 0/10)
+21:03:57 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:03:58 - INFO - ══ Turn  358  (next in 0.72s) ══
+21:03:58 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:03:58 - INFO -   → Upgrade selected: settlement_limit (currently 1/10)
+21:04:00 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:02 - INFO - ══ Turn  361  (next in 0.27s) ══
+21:04:02 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:02 - INFO -   → Upgrade selected: settlement_limit (currently 2/10)
+21:04:03 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:04 - INFO - ══ Turn  364  (next in 0.80s) ══
+21:04:04 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:04 - INFO -   → Upgrade selected: settlement_limit (currently 3/10)
+21:04:05 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:07 - INFO - ══ Turn  367  (next in 0.72s) ══
+21:04:07 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:07 - INFO -   → Upgrade selected: settlement_limit (currently 4/10)
+21:04:08 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:10 - INFO - ══ Turn  370  (next in 0.90s) ══
+21:04:10 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:10 - INFO -   → Upgrade selected: settlement_limit (currently 5/10)
+21:04:11 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:13 - INFO - ══ Turn  373  (next in 0.61s) ══
+21:04:13 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:13 - INFO -   → Upgrade selected: settlement_limit (currently 6/10)
+21:04:13 - INFO -   ⟳ Preemptive build at (130, 181) (parent (129, 181) is 90%)
+21:04:14 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:16 - INFO - ══ Turn  376  (next in 0.61s) ══
+21:04:16 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:16 - INFO -   → Upgrade selected: settlement_limit (currently 7/10)
+21:04:17 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:18 - INFO - ══ Turn  378  (next in 0.77s) ══
+21:04:18 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:18 - INFO -   → Upgrade selected: settlement_limit (currently 8/10)
+21:04:19 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:21 - INFO - ══ Turn  381  (next in 0.84s) ══
+21:04:21 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:21 - INFO -   → Upgrade selected: settlement_limit (currently 9/10)
+21:04:22 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:04:24 - INFO - ══ Turn  384  (next in 0.83s) ══
+21:04:24 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:24 - INFO -   → Upgrade selected: repair_power (currently 0/3)
+21:04:25 - INFO -   ✔ 1 commands sent | upgrade=repair_power | relocate=no
+21:04:26 - INFO - ══ Turn  386  (next in 0.87s) ══
+21:04:26 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:26 - INFO -   → Upgrade selected: repair_power (currently 1/3)
+21:04:27 - INFO -   ✔ 1 commands sent | upgrade=repair_power | relocate=no
+21:04:29 - INFO - ══ Turn  389  (next in 0.49s) ══
+21:04:29 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:30 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:31 - INFO - ══ Turn  391  (next in 0.99s) ══
+21:04:31 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:31 - INFO -   → Upgrade selected: repair_power (currently 2/3)
+21:04:32 - INFO -   ✔ 1 commands sent | upgrade=repair_power | relocate=no
+21:04:35 - INFO - ══ Turn  395  (next in 0.78s) ══
+21:04:35 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:37 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:38 - INFO - ══ Turn  398  (next in 0.47s) ══
+21:04:38 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:40 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:41 - INFO - ══ Turn  401  (next in 0.99s) ══
+21:04:41 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:42 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:45 - INFO - ══ Turn  404  (next in 0.33s) ══
+21:04:45 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:46 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:47 - INFO - ══ Turn  407  (next in 0.43s) ══
+21:04:47 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:48 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:49 - INFO - ══ Turn  408  (next in 1.15s) ══
+21:04:49 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:50 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:52 - INFO - ══ Turn  411  (next in 1.02s) ══
+21:04:52 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:53 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:54 - INFO - ══ Turn  413  (next in 1.15s) ══
+21:04:54 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:54 - INFO -   ⟳ Preemptive build at (103, 78) (parent (102, 78) is 90%)
+21:04:55 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:04:57 - INFO - ══ Turn  416  (next in 1.15s) ══
+21:04:57 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:04:58 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:00 - INFO - ══ Turn  419  (next in 1.13s) ══
+21:05:00 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:01 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:03 - INFO - ══ Turn  423  (next in 0.91s) ══
+21:05:03 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:03 - INFO -   → Upgrade selected: decay_mitigation (currently 0/3)
+21:05:04 - INFO -   ✔ 1 commands sent | upgrade=decay_mitigation | relocate=no
+21:05:05 - INFO - ══ Turn  424  (next in 1.16s) ══
+21:05:05 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:05 - INFO -   → Upgrade selected: decay_mitigation (currently 0/3)
+21:05:06 - INFO -   ✔ 1 commands sent | upgrade=decay_mitigation | relocate=no
+21:05:08 - INFO - ══ Turn  428  (next in 0.88s) ══
+21:05:08 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:09 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:11 - INFO - ══ Turn  430  (next in 0.15s) ══
+21:05:11 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:12 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:13 - INFO - ══ Turn  433  (next in 0.67s) ══
+21:05:13 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:13 - INFO -   ⟳ Preemptive build at (58, 97) (parent (57, 97) is 90%)
+21:05:14 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:15 - INFO - ══ Turn  434  (next in 1.12s) ══
+21:05:15 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:15 - INFO -   ⟳ Preemptive build at (56, 97) (parent (57, 97) is 95%)
+21:05:16 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:18 - INFO - ══ Turn  438  (next in 0.87s) ══
+21:05:18 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:19 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:21 - INFO - ══ Turn  440  (next in 0.16s) ══
+21:05:21 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:22 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:23 - INFO - ══ Turn  443  (next in 0.67s) ══
+21:05:23 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:24 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:25 - INFO - ══ Turn  445  (next in 0.77s) ══
+21:05:25 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:26 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:27 - INFO - ══ Turn  446  (next in 0.14s) ══
+21:05:27 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:28 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:29 - INFO - ══ Turn  449  (next in 1.09s) ══
+21:05:29 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:30 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:31 - INFO - ══ Turn  450  (next in 0.68s) ══
+21:05:31 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:31 - INFO -   → Upgrade selected: decay_mitigation (currently 1/3)
+21:05:32 - INFO -   ✔ 1 commands sent | upgrade=decay_mitigation | relocate=no
+21:05:33 - INFO - ══ Turn  453  (next in 0.52s) ══
+21:05:33 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:33 - INFO -   ⟳ Preemptive build at (54, 84) (parent (55, 84) is 90%)
+21:05:34 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:35 - INFO - ══ Turn  455  (next in 0.87s) ══
+21:05:35 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:36 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:37 - INFO - ══ Turn  456  (next in 1.13s) ══
+21:05:37 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:38 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:39 - INFO - ══ Turn  458  (next in 1.17s) ══
+21:05:39 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:40 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:42 - INFO - ══ Turn  462  (next in 0.81s) ══
+21:05:42 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:43 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:45 - INFO - ══ Turn  465  (next in 0.72s) ══
+21:05:45 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:46 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:47 - INFO - ══ Turn  466  (next in 1.15s) ══
+21:05:47 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:48 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:50 - INFO - ══ Turn  469  (next in 1.13s) ══
+21:05:50 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:51 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:52 - INFO - ══ Turn  472  (next in 1.02s) ══
+21:05:52 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:52 - INFO -   ⟳ Preemptive build at (141, 153) (parent (140, 153) is 85%)
+21:05:53 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:56 - INFO - ══ Turn  475  (next in 0.49s) ══
+21:05:56 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:56 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:05:57 - INFO - ══ Turn  476  (next in 0.17s) ══
+21:05:57 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:05:58 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:00 - INFO - ══ Turn  479  (next in 0.56s) ══
+21:06:00 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:00 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:01 - INFO - ══ Turn  480  (next in 1.17s) ══
+21:06:01 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:02 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:04 - INFO - ══ Turn  483  (next in 1.04s) ══
+21:06:04 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:05 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:07 - INFO - ══ Turn  486  (next in 0.15s) ══
+21:06:07 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:08 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:09 - INFO - ══ Turn  489  (next in 0.97s) ══
+21:06:09 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:10 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:11 - INFO - ══ Turn  490  (next in 1.14s) ══
+21:06:11 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:12 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:15 - INFO - ══ Turn  494  (next in 0.51s) ══
+21:06:15 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:15 - INFO -   ⟳ Preemptive build at (182, 268) (parent (181, 268) is 95%)
+21:06:16 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:17 - INFO - ══ Turn  496  (next in 0.14s) ══
+21:06:17 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:18 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:19 - INFO - ══ Turn  499  (next in 0.98s) ══
+21:06:19 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:20 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:21 - INFO - ══ Turn  500  (next in 0.16s) ══
+21:06:21 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:22 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:23 - INFO - ══ Turn  503  (next in 0.84s) ══
+21:06:23 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:25 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:27 - INFO - ══ Turn  507  (next in 0.81s) ══
+21:06:27 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:29 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:30 - INFO - ══ Turn  510  (next in 0.86s) ══
+21:06:30 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:31 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:33 - INFO - ══ Turn  513  (next in 0.84s) ══
+21:06:33 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:33 - INFO -   ⟳ Preemptive build at (178, 119) (parent (177, 119) is 90%)
+21:06:34 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:36 - INFO - ══ Turn  515  (next in 1.11s) ══
+21:06:36 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:37 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:39 - INFO - ══ Turn  519  (next in 0.70s) ══
+21:06:39 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:40 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:42 - INFO - ══ Turn  522  (next in 0.99s) ══
+21:06:42 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:43 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:45 - INFO - ══ Turn  525  (next in 0.72s) ══
+21:06:45 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:46 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:47 - INFO - ══ Turn  526  (next in 1.12s) ══
+21:06:47 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:48 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:49 - INFO - ══ Turn  528  (next in 1.16s) ══
+21:06:49 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:50 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:52 - INFO - ══ Turn  531  (next in 0.92s) ══
+21:06:52 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:53 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:55 - INFO - ══ Turn  535  (next in 0.88s) ══
+21:06:55 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:56 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:06:58 - INFO - ══ Turn  538  (next in 0.89s) ══
+21:06:58 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:06:59 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:00 - INFO - ══ Turn  539  (next in 1.16s) ══
+21:07:00 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:02 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:03 - INFO - ══ Turn  542  (next in 0.82s) ══
+21:07:03 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:04 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:06 - INFO - ══ Turn  545  (next in 0.39s) ══
+21:07:06 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:07 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:09 - INFO - ══ Turn  548  (next in 0.34s) ══
+21:07:09 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:09 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:10 - INFO - ══ Turn  550  (next in 0.96s) ══
+21:07:10 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:11 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:12 - INFO - ══ Turn  552  (next in 0.90s) ══
+21:07:12 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:12 - INFO -   ⟳ Preemptive build at (70, 98) (parent (69, 98) is 85%)
+21:07:13 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:15 - INFO - ══ Turn  555  (next in 0.79s) ══
+21:07:15 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:17 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:19 - INFO - ══ Turn  558  (next in 0.39s) ══
+21:07:19 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:20 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:22 - INFO - ══ Turn  561  (next in 0.44s) ══
+21:07:22 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:22 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:24 - INFO - ══ Turn  563  (next in 0.26s) ══
+21:07:24 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:25 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:26 - INFO - ══ Turn  566  (next in 0.83s) ══
+21:07:26 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:27 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:30 - INFO - ══ Turn  569  (next in 0.34s) ══
+21:07:30 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:31 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:32 - INFO - ══ Turn  572  (next in 0.79s) ══
+21:07:32 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:32 - INFO -   ⟳ Preemptive build at (150, 246) (parent (149, 246) is 85%)
+21:07:33 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:35 - INFO - ══ Turn  575  (next in 1.06s) ══
+21:07:35 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:36 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:38 - INFO - ══ Turn  578  (next in 0.87s) ══
+21:07:38 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:39 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:41 - INFO - ══ Turn  580  (next in 1.58s) ══
+21:07:41 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:42 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:44 - INFO - ══ Turn  584  (next in 0.87s) ══
+21:07:44 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:45 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:47 - INFO - ══ Turn  587  (next in 0.73s) ══
+21:07:47 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:48 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:49 - INFO - ══ Turn  588  (next in 0.17s) ══
+21:07:49 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:50 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:51 - INFO - ══ Turn  591  (next in 0.90s) ══
+21:07:51 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:52 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:55 - INFO - ══ Turn  594  (next in 0.63s) ══
+21:07:55 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:55 - INFO -   ⟳ Preemptive build at (115, 59) (parent (114, 59) is 95%)
+21:07:57 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:07:58 - INFO - ══ Turn  598  (next in 0.87s) ══
+21:07:58 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:07:59 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:01 - INFO - ══ Turn    0  (next in 0.00s) ══
+21:08:01 - WARNING - No plantations — waiting for respawn…
+21:08:03 - INFO - ══ Turn    3  (next in 0.85s) ══
+21:08:03 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:04 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:05 - INFO - ══ Turn    5  (next in 0.53s) ══
+21:08:05 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:06 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:07 - INFO - ══ Turn    6  (next in 1.03s) ══
+21:08:07 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:08 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:09 - INFO - ══ Turn    9  (next in 1.02s) ══
+21:08:09 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:10 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:11 - INFO - ══ Turn   11  (next in 1.02s) ══
+21:08:11 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:12 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:14 - INFO - ══ Turn   13  (next in 1.02s) ══
+21:08:14 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:15 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:16 - INFO - ══ Turn   15  (next in 1.22s) ══
+21:08:16 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:17 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:19 - INFO - ══ Turn   19  (next in 1.03s) ══
+21:08:19 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:19 - INFO -   ⟳ Preemptive build at (226, 271) (parent (225, 271) is 90%)
+21:08:20 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:21 - INFO - ══ Turn   20  (next in 1.03s) ══
+21:08:21 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:21 - INFO -   ⟳ Preemptive build at (226, 271) (parent (225, 271) is 95%)
+21:08:22 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:24 - INFO - ══ Turn   23  (next in 0.25s) ══
+21:08:24 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:24 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:25 - INFO - ══ Turn   24  (next in 1.04s) ══
+21:08:25 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:26 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:27 - INFO - ══ Turn   27  (next in 0.64s) ══
+21:08:27 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:28 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:29 - INFO - ══ Turn   29  (next in 1.03s) ══
+21:08:29 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:30 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:31 - INFO - ══ Turn   31  (next in 0.80s) ══
+21:08:31 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:31 - INFO -   → Upgrade selected: settlement_limit (currently 0/10)
+21:08:32 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:08:33 - INFO - ══ Turn   32  (next in 1.17s) ══
+21:08:33 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:33 - INFO -   → Upgrade selected: settlement_limit (currently 0/10)
+21:08:34 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:08:36 - INFO - ══ Turn   36  (next in 1.03s) ══
+21:08:36 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:37 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:39 - INFO - ══ Turn   39  (next in 1.02s) ══
+21:08:39 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:39 - INFO -   ⟳ Preemptive build at (81, 117) (parent (80, 117) is 90%)
+21:08:40 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:41 - INFO - ══ Turn   41  (next in 0.95s) ══
+21:08:41 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:42 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:44 - INFO - ══ Turn   44  (next in 0.52s) ══
+21:08:44 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:45 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:46 - INFO - ══ Turn   46  (next in 1.03s) ══
+21:08:46 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:47 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:48 - INFO - ══ Turn   47  (next in 1.06s) ══
+21:08:48 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:49 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:50 - INFO - ══ Turn   50  (next in 1.02s) ══
+21:08:50 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:51 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:52 - INFO - ══ Turn   52  (next in 0.68s) ══
+21:08:52 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:53 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:55 - INFO - ══ Turn   54  (next in 1.05s) ══
+21:08:55 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:56 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:08:58 - INFO - ══ Turn   58  (next in 0.57s) ══
+21:08:58 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:08:58 - INFO -   ⟳ Preemptive build at (21, 211) (parent (20, 211) is 85%)
+21:08:59 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:01 - INFO - ══ Turn   60  (next in 1.05s) ══
+21:09:01 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:01 - INFO -   → Upgrade selected: settlement_limit (currently 1/10)
+21:09:01 - INFO -   ⟳ Preemptive build at (19, 211) (parent (20, 211) is 95%)
+21:09:02 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:09:04 - INFO - ══ Turn   64  (next in 1.05s) ══
+21:09:04 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:05 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:06 - INFO - ══ Turn   66  (next in 0.82s) ══
+21:09:06 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:07 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:09 - INFO - ══ Turn   69  (next in 0.64s) ══
+21:09:09 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:10 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:12 - INFO - ══ Turn   72  (next in 1.05s) ══
+21:09:12 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:13 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:15 - INFO - ══ Turn   75  (next in 0.93s) ══
+21:09:15 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:16 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:17 - INFO - ══ Turn   77  (next in 0.42s) ══
+21:09:17 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:18 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:19 - INFO - ══ Turn   78  (next in 1.02s) ══
+21:09:19 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:19 - INFO -   ⟳ Preemptive build at (216, 41) (parent (215, 41) is 85%)
+21:09:20 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:21 - INFO - ══ Turn   81  (next in 0.58s) ══
+21:09:21 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:22 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:23 - INFO - ══ Turn   82  (next in 0.74s) ══
+21:09:23 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:24 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:25 - INFO - ══ Turn   84  (next in 1.07s) ══
+21:09:25 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:26 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:27 - INFO - ══ Turn   87  (next in 0.50s) ══
+21:09:27 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:28 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:29 - INFO - ══ Turn   88  (next in 1.06s) ══
+21:09:29 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:30 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:31 - INFO - ══ Turn   91  (next in 0.84s) ══
+21:09:31 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:31 - INFO -   → Upgrade selected: settlement_limit (currently 2/10)
+21:09:32 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:09:34 - INFO - ══ Turn   94  (next in 0.89s) ══
+21:09:34 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:35 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:36 - INFO - ══ Turn   96  (next in 0.98s) ══
+21:09:36 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:37 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:38 - INFO - ══ Turn   97  (next in 1.04s) ══
+21:09:38 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:39 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:40 - INFO - ══ Turn   99  (next in 1.05s) ══
+21:09:40 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:40 - INFO -   ⟳ Preemptive build at (96, 246) (parent (95, 246) is 90%)
+21:09:41 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:43 - INFO - ══ Turn  103  (next in 0.63s) ══
+21:09:43 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:44 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:45 - INFO - ══ Turn  104  (next in 1.05s) ══
+21:09:45 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:46 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:47 - INFO - ══ Turn  106  (next in 1.05s) ══
+21:09:47 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:48 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:49 - INFO - ══ Turn  109  (next in 1.54s) ══
+21:09:49 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:50 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:52 - INFO - ══ Turn  111  (next in 0.67s) ══
+21:09:52 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:53 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:55 - INFO - ══ Turn  115  (next in 1.05s) ══
+21:09:55 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:56 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:57 - INFO - ══ Turn  117  (next in 0.59s) ══
+21:09:57 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:58 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:09:59 - INFO - ══ Turn  119  (next in 1.13s) ══
+21:09:59 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:09:59 - INFO -   ⟳ Preemptive build at (258, 55) (parent (257, 55) is 90%)
+21:10:00 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:02 - INFO - ══ Turn  122  (next in 0.97s) ══
+21:10:02 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:02 - INFO -   → Upgrade selected: settlement_limit (currently 3/10)
+21:10:03 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:10:04 - INFO - ══ Turn  124  (next in 0.73s) ══
+21:10:04 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:05 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:06 - INFO - ══ Turn  125  (next in 1.05s) ══
+21:10:06 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:07 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:09 - INFO - ══ Turn  128  (next in 1.04s) ══
+21:10:09 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:10 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:11 - INFO - ══ Turn  131  (next in 0.36s) ══
+21:10:11 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:13 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:15 - INFO - ══ Turn  134  (next in 0.94s) ══
+21:10:15 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:15 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:16 - INFO - ══ Turn  136  (next in 1.06s) ══
+21:10:16 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:17 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:18 - INFO - ══ Turn  137  (next in 1.07s) ══
+21:10:18 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:19 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:20 - INFO - ══ Turn  140  (next in 1.06s) ══
+21:10:20 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:20 - INFO -   ⟳ Preemptive build at (182, 278) (parent (181, 278) is 95%)
+21:10:21 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:24 - INFO - ══ Turn  143  (next in 0.47s) ══
+21:10:24 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:24 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:25 - INFO - ══ Turn  144  (next in 1.05s) ══
+21:10:25 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:26 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:27 - INFO - ══ Turn  147  (next in 0.61s) ══
+21:10:27 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:28 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:29 - INFO - ══ Turn  149  (next in 1.04s) ══
+21:10:29 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:30 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:31 - INFO - ══ Turn  150  (next in 1.06s) ══
+21:10:31 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:31 - INFO -   → Upgrade selected: settlement_limit (currently 4/10)
+21:10:32 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:10:34 - INFO - ══ Turn  154  (next in 0.53s) ══
+21:10:34 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:35 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:36 - INFO - ══ Turn  155  (next in 1.06s) ══
+21:10:36 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:37 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:38 - INFO - ══ Turn  157  (next in 1.08s) ══
+21:10:38 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:39 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:40 - INFO - ══ Turn  159  (next in 1.08s) ══
+21:10:40 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:40 - INFO -   ⟳ Preemptive build at (182, 308) (parent (181, 308) is 90%)
+21:10:41 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:42 - INFO - ══ Turn  161  (next in 1.07s) ══
+21:10:42 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:43 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:44 - INFO - ══ Turn  164  (next in 0.99s) ══
+21:10:44 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:45 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:46 - INFO - ══ Turn  166  (next in 0.74s) ══
+21:10:46 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:47 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:49 - INFO - ══ Turn  169  (next in 1.05s) ══
+21:10:49 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:50 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:51 - INFO - ══ Turn  170  (next in 1.05s) ══
+21:10:51 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:52 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:54 - INFO - ══ Turn  173  (next in 1.06s) ══
+21:10:54 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:55 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:57 - INFO - ══ Turn  177  (next in 0.63s) ══
+21:10:57 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:58 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:10:59 - INFO - ══ Turn  179  (next in 0.86s) ══
+21:10:59 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:10:59 - INFO -   ⟳ Preemptive build at (230, 343) (parent (229, 343) is 90%)
+21:11:00 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:01 - INFO - ══ Turn  181  (next in 1.05s) ══
+21:11:01 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:01 - INFO -   → Upgrade selected: settlement_limit (currently 5/10)
+21:11:02 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:11:04 - INFO - ══ Turn  184  (next in 1.06s) ══
+21:11:04 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:05 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:06 - INFO - ══ Turn  185  (next in 1.06s) ══
+21:11:06 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:07 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:08 - INFO - ══ Turn  188  (next in 0.89s) ══
+21:11:08 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:09 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:10 - INFO - ══ Turn  190  (next in 1.09s) ══
+21:11:10 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:11 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:12 - INFO - ══ Turn  192  (next in 0.41s) ══
+21:11:12 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:13 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:14 - INFO - ══ Turn  193  (next in 1.08s) ══
+21:11:14 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:15 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:16 - INFO - ══ Turn  196  (next in 1.04s) ══
+21:11:16 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:17 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:18 - INFO - ══ Turn  198  (next in 0.80s) ══
+21:11:18 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:18 - INFO -   ⟳ Preemptive build at (168, 112) (parent (167, 112) is 85%)
+21:11:19 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:21 - INFO - ══ Turn  200  (next in 1.05s) ══
+21:11:21 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:21 - INFO -   ⟳ Preemptive build at (166, 112) (parent (167, 112) is 95%)
+21:11:22 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:24 - INFO - ══ Turn  204  (next in 0.93s) ══
+21:11:24 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:25 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:26 - INFO - ══ Turn  206  (next in 1.03s) ══
+21:11:26 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:27 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:28 - INFO - ══ Turn  208  (next in 0.81s) ══
+21:11:28 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:29 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:31 - INFO - ══ Turn  211  (next in 1.07s) ══
+21:11:31 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:31 - INFO -   → Upgrade selected: settlement_limit (currently 6/10)
+21:11:32 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:11:34 - INFO - ══ Turn  214  (next in 1.22s) ══
+21:11:34 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:35 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:37 - INFO - ══ Turn  217  (next in 0.76s) ══
+21:11:37 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:38 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:40 - INFO - ══ Turn  219  (next in 1.08s) ══
+21:11:40 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:40 - INFO -   ⟳ Preemptive build at (84, 246) (parent (83, 246) is 90%)
+21:11:41 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:43 - INFO - ══ Turn  222  (next in 0.15s) ══
+21:11:43 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:44 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:45 - INFO - ══ Turn  224  (next in 1.04s) ══
+21:11:45 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:46 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:47 - INFO - ══ Turn  226  (next in 1.04s) ══
+21:11:47 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:48 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:49 - INFO - ══ Turn  229  (next in 1.05s) ══
+21:11:49 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:50 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:51 - INFO - ══ Turn  230  (next in 1.05s) ══
+21:11:51 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:52 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:54 - INFO - ══ Turn  234  (next in 1.06s) ══
+21:11:54 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:55 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:56 - INFO - ══ Turn  235  (next in 1.08s) ══
+21:11:56 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:57 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:11:59 - INFO - ══ Turn  239  (next in 0.76s) ══
+21:11:59 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:11:59 - INFO -   ⟳ Preemptive build at (283, 131) (parent (282, 131) is 90%)
+21:12:00 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:01 - INFO - ══ Turn  240  (next in 1.05s) ══
+21:12:01 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:01 - INFO -   → Upgrade selected: settlement_limit (currently 7/10)
+21:12:01 - INFO -   ⟳ Preemptive build at (283, 131) (parent (282, 131) is 95%)
+21:12:02 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:12:04 - INFO - ══ Turn  244  (next in 1.04s) ══
+21:12:04 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:05 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:06 - INFO - ══ Turn  246  (next in 0.67s) ══
+21:12:06 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:07 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:09 - INFO - ══ Turn  249  (next in 0.50s) ══
+21:12:09 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:10 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:11 - INFO - ══ Turn  250  (next in 1.05s) ══
+21:12:11 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:13 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:14 - INFO - ══ Turn  253  (next in 1.02s) ══
+21:12:14 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:15 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:17 - INFO - ══ Turn  256  (next in 0.45s) ══
+21:12:17 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:18 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:20 - INFO - ══ Turn  259  (next in 0.14s) ══
+21:12:20 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:20 - INFO -   ⟳ Preemptive build at (226, 95) (parent (225, 95) is 90%)
+21:12:21 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:22 - INFO - ══ Turn  262  (next in 0.60s) ══
+21:12:22 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:23 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:25 - INFO - ══ Turn  265  (next in 0.44s) ══
+21:12:25 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:26 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:27 - INFO - ══ Turn  266  (next in 1.07s) ══
+21:12:27 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:28 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:30 - INFO - ══ Turn  269  (next in 1.54s) ══
+21:12:30 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:31 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:34 - INFO - ══ Turn  273  (next in 1.13s) ══
+21:12:34 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:34 - INFO -   → Upgrade selected: settlement_limit (currently 8/10)
+21:12:35 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:12:37 - INFO - ══ Turn  277  (next in 0.97s) ══
+21:12:37 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:38 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:40 - INFO - ══ Turn  280  (next in 1.09s) ══
+21:12:40 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:40 - INFO -   ⟳ Preemptive build at (269, 231) (parent (268, 231) is 95%)
+21:12:41 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:42 - INFO - ══ Turn  282  (next in 0.85s) ══
+21:12:42 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:43 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:45 - INFO - ══ Turn  284  (next in 1.05s) ══
+21:12:45 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:46 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:48 - INFO - ══ Turn  287  (next in 1.06s) ══
+21:12:48 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:49 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:50 - INFO - ══ Turn  289  (next in 1.05s) ══
+21:12:50 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:51 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:52 - INFO - ══ Turn  291  (next in 1.06s) ══
+21:12:52 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:53 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:54 - INFO - ══ Turn  294  (next in 1.45s) ══
+21:12:54 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:55 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:57 - INFO - ══ Turn  297  (next in 0.52s) ══
+21:12:57 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:58 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:12:59 - INFO - ══ Turn  299  (next in 0.99s) ══
+21:12:59 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:12:59 - INFO -   ⟳ Preemptive build at (230, 44) (parent (229, 44) is 90%)
+21:13:00 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:01 - INFO - ══ Turn  301  (next in 0.72s) ══
+21:13:01 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:01 - INFO -   → Upgrade selected: settlement_limit (currently 9/10)
+21:13:02 - INFO -   ✔ 1 commands sent | upgrade=settlement_limit | relocate=no
+21:13:05 - INFO - ══ Turn  304  (next in 0.95s) ══
+21:13:05 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:06 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:07 - INFO - ══ Turn  307  (next in 1.07s) ══
+21:13:07 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:08 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:10 - INFO - ══ Turn  309  (next in 1.06s) ══
+21:13:10 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:11 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:12 - INFO - ══ Turn  312  (next in 0.76s) ══
+21:13:12 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:13 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:15 - INFO - ══ Turn  314  (next in 1.05s) ══
+21:13:15 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:16 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:19 - INFO - ══ Turn  318  (next in 0.38s) ══
+21:13:19 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:19 - INFO -   ⟳ Preemptive build at (186, 19) (parent (185, 19) is 85%)
+21:13:20 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:21 - INFO - ══ Turn  321  (next in 1.05s) ══
+21:13:21 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:22 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:24 - INFO - ══ Turn  324  (next in 0.93s) ══
+21:13:24 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:25 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:26 - INFO - ══ Turn  325  (next in 1.05s) ══
+21:13:26 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:28 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:30 - INFO - ══ Turn  329  (next in 0.41s) ══
+21:13:30 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:30 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:31 - INFO - ══ Turn  331  (next in 0.72s) ══
+21:13:31 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:31 - INFO -   → Upgrade selected: repair_power (currently 0/3)
+21:13:32 - INFO -   ✔ 1 commands sent | upgrade=repair_power | relocate=no
+21:13:33 - INFO - ══ Turn  333  (next in 0.75s) ══
+21:13:33 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:34 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:36 - INFO - ══ Turn  336  (next in 1.05s) ══
+21:13:36 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:37 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:39 - INFO - ══ Turn  338  (next in 1.04s) ══
+21:13:39 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:39 - INFO -   ⟳ Preemptive build at (330, 189) (parent (329, 189) is 85%)
+21:13:40 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:41 - INFO - ══ Turn  341  (next in 0.82s) ══
+21:13:41 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:42 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:44 - INFO - ══ Turn  344  (next in 0.65s) ══
+21:13:44 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:45 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:46 - INFO - ══ Turn  345  (next in 1.05s) ══
+21:13:46 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:47 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:48 - INFO - ══ Turn  347  (next in 1.07s) ══
+21:13:48 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:49 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:50 - INFO - ══ Turn  350  (next in 1.06s) ══
+21:13:50 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:51 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:52 - INFO - ══ Turn  352  (next in 0.87s) ══
+21:13:52 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:53 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:13:55 - INFO - ══ Turn  354  (next in 1.06s) ══
+21:13:55 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:13:57 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:14:00 - INFO - ══ Turn  359  (next in 0.43s) ══
+21:14:00 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:14:00 - INFO -   ⟳ Preemptive build at (182, 288) (parent (181, 288) is 90%)
+21:14:00 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:14:01 - INFO - ══ Turn  360  (next in 1.05s) ══
+21:14:01 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:14:01 - INFO -   → Upgrade selected: repair_power (currently 1/3)
+21:14:01 - INFO -   ⟳ Preemptive build at (182, 288) (parent (181, 288) is 95%)
+21:14:03 - INFO -   ✔ 1 commands sent | upgrade=repair_power | relocate=no
+21:14:05 - INFO - ══ Turn  365  (next in 1.04s) ══
+21:14:05 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+21:14:06 - INFO -   ✔ 1 commands sent | upgrade=— | relocate=no
+21:14:07 - INFO - ══ Turn  367  (next in 1.02s) ══
+21:14:07 - INFO -   Plantations: 1 total | 1 connected | 0 isolated
+^C21:14:08 - INFO - Bot stopped by user.
